@@ -282,7 +282,7 @@ static int gost28147_cfb_decrypt_inplace(struct skcipher_walk *walk,
 		src += bsize;
 	} while ((nbytes -= bsize) >= bsize);
 
-	memcpy(walk->iv, iv, bsize);
+	memmove(walk->iv, iv, bsize);
 
 	return nbytes;
 }
